@@ -1586,10 +1586,9 @@ input, select, textarea { font-size:max(16px, 1rem); }
     playsinline
     preload="auto"
     aria-hidden="true"
-    poster="videos/Birds-poster.jpg"
     onerror="this.style.display='none'"
   >
-    <source src="videos/Birds.mp4" type="video/mp4">
+    <source src="Birds.mp4" type="video/mp4">
   </video>
 
   <!-- Dark gradient overlay so text stays readable -->
@@ -3402,7 +3401,7 @@ function addTyping() {
 
 /* ── Hero video playlist: Birds → Simba → Birds → … ── */
 (function(){
-  var videos = ['videos/Birds.mp4', 'videos/Simba.mp4'];
+  var videos = ['Birds.mp4', 'Simba.MP4'];
   var current = 0;
   var vid = document.getElementById('heroVideo');
   if (!vid) return;
