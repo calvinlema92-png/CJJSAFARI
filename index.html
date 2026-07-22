@@ -1577,13 +1577,14 @@ input, select, textarea { font-size:max(16px, 1rem); }
   <!-- Fallback gradient (shows before video loads / on reduced-motion) -->
   <div class="hero-bg"></div>
 
-  <!-- Full-screen background video — plays Birds then Simba, loops forever -->
+  <!-- Full-screen background video — Birds loops forever -->
   <video
     id="heroVideo"
     class="hero-video"
     autoplay
     muted
     playsinline
+    loop
     preload="auto"
     aria-hidden="true"
     onerror="this.style.display='none'"
@@ -3399,21 +3400,10 @@ function addTyping() {
   return d;
 }
 
-/* ── Hero video playlist: Birds → Simba → Birds → … ── */
+/* ── Hero video: Birds loops continuously ── */
 (function(){
-  var videos = ['Birds.mp4', 'Simba.MP4'];
-  var current = 0;
   var vid = document.getElementById('heroVideo');
   if (!vid) return;
-
-  vid.addEventListener('ended', function() {
-    current = (current + 1) % videos.length;
-    vid.src = videos[current];
-    vid.load();
-    vid.play().catch(function(){});
-  });
-
-  /* Start first video */
   vid.play().catch(function(){});
 })();
 function toggleFaq(btn) {
